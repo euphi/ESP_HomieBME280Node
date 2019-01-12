@@ -3,3 +3,4 @@
 .piolibdeps
 .settings/
 lib/
+src/main.cpp
