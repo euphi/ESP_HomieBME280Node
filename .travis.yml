@@ -60,7 +60,8 @@ env:
 
 install:
     - pip install -U platformio
-    - platformio lib -g install https://github.com/marvinroger/homie-esp8266.git#develop 
+    - platformio lib -g install https://github.com/bodiroga/homie-esp8266.git#develop-v3
+    - platformio lib -g install 684
 
 script:
     - platformio ci --lib="." --board=esp01
