@@ -6,8 +6,6 @@
  */
 
 #include <HomieBME280Node.h>
-#include <LoggerNode.h>
-
 
 HomieBME280Node::HomieBME280Node():
 	HomieNode("bme280", "BME280 Sensor", "sensor_t_h_p"),
