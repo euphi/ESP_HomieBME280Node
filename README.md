@@ -1,4 +1,4 @@
-# ESP_HomieBME280Node
+# ESP_HomieBME280Node [![Build Status](https://travis-ci.org/euphi/ESP_HomieBME280Node.svg?branch=master)](https://travis-ci.org/euphi/ESP_HomieBME280Node)
 
 Node for Homie-ESP8266 (3.0+)  to connect a BME280 sensor
 
@@ -51,3 +51,5 @@ Why do you even want to do this?
 * Support loading of calibration values
 * Support setting reading interval 
 * Send also calculated values like sea level pressure or dew point.
+* Fork Sparkfun BME280 library to remove unecessary code (e.g. SPI interface)
+
