@@ -1,6 +1,6 @@
 {
         "name": "ESP_HomieBME280Node",
-        "version": "0.1.1",
+        "version": "0.1.2",
         "keywords": "Homie, ESP8266, BME280, Sensors",
         "description": "Node to connect BME280 Sensor to Homie-ESP8266",
         "authors":
@@ -16,7 +16,7 @@
         ],
         "repository": {
                 "type": "git",
-                "url": "https://github.com/euphi/ESP_HomieBME280Node.git"
+                "url": "https://github.com/fablabnbg/ESP_HomieBME280Node.git"
         },
         "frameworks": "arduino",
         "platforms": ["espressif8266", "espressif32"],
@@ -24,7 +24,7 @@
         [
                 {
                         "name": "Homie",
-                        "version": "https://github.com/bodiroga/homie-esp8266.git#develop-v3"
+                        "version": "https://github.com/homieiot/homie-esp8266.git#develop-v3"
                 },
                 {
                 		"name": "SparkFun BME280"
