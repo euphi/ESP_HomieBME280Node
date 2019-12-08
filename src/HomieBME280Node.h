@@ -16,8 +16,22 @@ public:
 	HomieBME280Node();
 	virtual void setup() override;
 	virtual void loop() override;
+
+	float getRelHum() const {
+		return curHum;
+	}
+
+	float getPress() const {
+		return curPres;
+	}
+
+	float getTemp() const {
+		return curTemp;
+	}
+
 	//virtual void onReadyToOperate() override;
 	//virtual bool handleInput(const HomieRange& range, const String  &property, const String &value) override;
+
 
 private:
 	BME280 sensor;
