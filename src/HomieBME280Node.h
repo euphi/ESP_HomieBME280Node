@@ -34,6 +34,8 @@ public:
 
 
 private:
+	static HomieSetting<double> heightAboveSealevel;
+
 	BME280 sensor;
 	float curPres;
 	float curTemp;

@@ -6,6 +6,9 @@
  */
 
 #include <HomieBME280Node.h>
+#include <Homie.hpp>
+
+HomieSetting<double> HomieBME280Node::heightAboveSealevel ("HeightAboveSealevel", "height above sea-level (in meters)");
 
 HomieBME280Node::HomieBME280Node():
 	HomieNode("bme280", "BME280 Sensor", "sensor_t_h_p"),
@@ -15,7 +18,7 @@ HomieBME280Node::HomieBME280Node():
 	advertise("pressure").setName("Luftdruck").setDatatype("float").setUnit("hPa");
 	advertise("humidity").setName("Luftfeuchtigkeit").setDatatype("float").setUnit("%");
 	advertise("dewPoint").setName("Taupunkt").setDatatype("float").setUnit("°C");
-
+	heightAboveSealevel.setDefaultValue(NAN);
 }
 
 void HomieBME280Node::setup() {
@@ -73,11 +76,18 @@ void HomieBME280Node::loop() {
 		curPres = sensor.readFloatPressure()/100;
 		curHum =  sensor.readFloatHumidity();
 		float dewPoint = sensor.dewPointC();
+
 		Serial.printf("Read values:\n\tPressure: %f mbar\n\tTemperatur: %f °C\n\tHumidity:%f relH\n", curPres, curTemp, curHum);
 		setProperty("temperature").send(String(curTemp));
-		setProperty("pressure").send(String(curPres));
-		setProperty("humidity").send(String(curHum));
 		setProperty("dewPoint").send(String(dewPoint));
+		setProperty("humidity").send(String(curHum));
+		double altitude = heightAboveSealevel.get();
+		if (isnan(altitude)) {
+			setProperty("pressure").send(String(curPres));
+		} else {
+			float pAtZero = curPres/pow(1-(altitude/44330.0),5.255);
+			setProperty("pressure").send(String(pAtZero));
+		}
 	}
 }
 

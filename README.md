@@ -6,7 +6,9 @@ Node for Homie-ESP8266 (3.0+)  to connect a BME280 sensor
 
 * Based on Sparkfun BME280 library
 * Builds with platformio
-* advertises MQTT topics according to specification
+* advertises MQTT topics according to Homie specification 3.0.1
+* calculates and publishes dew point
+* calculates air pressure at sea level
 
 ## Build instructions
 
@@ -37,19 +39,31 @@ Why do you even want to do this?
 **All dependencies are installed automatically by platformio**
 
 * Sparkfun BME280 - libarary to read out BME280 sensors
-* homie-ESP8266  - ESP8266 implementation of Homie convention
-   homie-esp8266 is currently loaded from fork/branch due to support of convention v3.0.1
+* homie-ESP8266  - ESP8266 implementation of Homie convention 
+** homie-esp8266 is currently loaded from [develop-v3] branch due to support of convention v3.0.1
 
 ## Programm Logic
 
 * `setup()`: initializes the sensor and advertises the homie nodes
-* `loop()`: read sensor values every minute and publish them on MQTT
+* `loop()`: reads sensor values every minute and publishes them on MQTT
+
+## Settings
+
+The measured air pressure is automatically converted to the air pressure at sea-level, if a setting `HeightAboveSealevel` is set and valid.
+
+E. g.:
+
+```
+        "settings": {
+                "HeightAboveSealevel": 318.0
+        }
+```
+  
 
 ## Outlook
 
 * Support BMP280 (just leave out humidity)
 * Support loading of calibration values
 * Support setting reading interval 
-* Send also calculated values like sea level pressure or dew point.
 * Fork Sparkfun BME280 library to remove unecessary code (e.g. SPI interface)
 
