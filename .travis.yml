@@ -60,7 +60,7 @@ env:
 
 install:
     - pip install -U platformio
-    - platformio lib -g install https://github.com/homieiot/homie-esp8266.git#develop-v3
+    - platformio lib -g install Homie
     - platformio lib -g install 684
 
 script:
