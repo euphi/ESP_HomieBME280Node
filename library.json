@@ -23,8 +23,7 @@
         "dependencies": 
         [
                 {
-                        "name": "Homie",
-                        "version": "https://github.com/homieiot/homie-esp8266.git#develop-v3"
+                        "name": "Homie",                        
                 },
                 {
                 		"name": "SparkFun BME280"
