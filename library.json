@@ -23,10 +23,10 @@
         "dependencies": 
         [
                 {
-                        "name": "Homie",                        
+                        "name": "Homie"
                 },
                 {
-                		"name": "SparkFun BME280"
+                        "name": "SparkFun BME280"
                 }
                 
         ]
