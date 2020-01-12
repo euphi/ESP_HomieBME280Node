@@ -1,1 +1,0 @@
-../examples/simplenode.cpp
