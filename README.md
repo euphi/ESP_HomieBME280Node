@@ -1,5 +1,7 @@
-# ESP_HomieBME280Node [![Build Status](https://travis-ci.org/fablabnbg/ESP_HomieBME280Node.svg?branch=master)](https://travis-ci.org/fablabnbg/ESP_HomieBME280Node) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/fablabnbg/ESP_HomieBME280Node)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/fablabnbg/ESP_HomieBME280Node)
+[![Build Status](https://travis-ci.org/fablabnbg/ESP_HomieBME280Node.svg?branch=master)](https://travis-ci.org/fablabnbg/ESP_HomieBME280Node)
 
+# ESP_HomieBME280Node  
 Node for Homie-ESP8266 (3.0+)  to connect a BME280 sensor
 
 ## Features
