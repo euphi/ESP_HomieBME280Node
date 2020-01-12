@@ -1,6 +1,6 @@
 {
         "name": "ESP_HomieBME280Node",
-        "version": "0.1.3",
+        "version": "0.2.0",
         "keywords": "Homie, ESP8266, BME280, Sensors",
         "description": "Node to connect BME280 Sensor to Homie-ESP8266",
         "authors":
