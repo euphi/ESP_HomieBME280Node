@@ -12,7 +12,7 @@ HomieSetting<double> HomieBME280Node::heightAboveSealevel ("HeightAboveSealevel"
 
 HomieBME280Node::HomieBME280Node():
 	HomieNode("bme280", "BME280 Sensor", "sensor_t_h_p"),
-	curPres(NAN), curTemp(NAN), curHum(NAN)
+	curPres(NAN), curTemp(NAN), curHum(NAN), callback(0)
 {
 	advertise("temperature").setName("Temperatur").setDatatype("float").setUnit("°C");
 	advertise("pressure").setName("Luftdruck").setDatatype("float").setUnit("hPa");
@@ -87,6 +87,10 @@ void HomieBME280Node::loop() {
 		} else {
 			float pAtZero = curPres/pow(1-(altitude/44330.0),5.255);
 			setProperty("pressure").send(String(pAtZero));
+		}
+
+		if (callback) {
+			callback(curTemp, curHum, curPres);
 		}
 	}
 }
